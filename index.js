@@ -43,7 +43,7 @@ const del = (patterns, options) => {
 
 	return globby(patterns, options).then(files => {
 		return pMap(files, mapper, options)
-			.filter((file) => file !== null);
+			.then(files => files.filter((file) => file !== null));
 	});
 };
 
