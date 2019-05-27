@@ -1,4 +1,4 @@
-import {IOptions as GlobOptions} from 'glob';
+import { IOptions as GlobOptions } from 'glob';
 
 declare namespace del {
 	interface Options extends Readonly<GlobOptions> {
@@ -33,6 +33,14 @@ declare namespace del {
 		@default Infinity
 		*/
 		readonly concurrency?: number;
+
+		/**
+		Use this option when path names are specified as full path
+		instead of globs
+
+		@default false
+		*/
+		readonly noGlob?: boolean;
 	}
 }
 
